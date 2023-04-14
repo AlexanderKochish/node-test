@@ -3,7 +3,7 @@ require('dotenv').config()
 const cors = require('cors')
 const app = express()
 const router = require('./routes/router')
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 3000
 const sequelize = require('./db')
 
 const swaggerUi = require('swagger-ui-express');
@@ -19,13 +19,9 @@ app.use(router)
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const start = async() => {
-    try {
-        await sequelize.authenticate();
-        await sequelize.sync()
-        app.listen(PORT,()=>console.log(`server run `))
-    } catch (error) {
-        console.log(error.message)
-    }
+    await sequelize.authenticate();
+    await sequelize.sync()
+    app.listen(PORT,()=>console.log(`server run `)) 
 }
 start()
 
