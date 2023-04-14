@@ -4,9 +4,9 @@ info:
   description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
   version: 0.1.9
 servers:
-  - url: https://node-test-server-vbvw.onrender.com
+  - url: https://tiny-seal-blazer.cyclic.app
     description: Optional server description, e.g. Main (production) server
-  - url: https://node-test-server-vbvw.onrender.com
+  - url: https://tiny-seal-blazer.cyclic.app
     description: Optional server description, e.g. Internal staging server for testing
 paths:
   /users:
