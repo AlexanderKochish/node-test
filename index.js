@@ -1,5 +1,6 @@
 const express = require('express')
 require('dotenv').config()
+const cors = require('cors')
 
 const app = express()
 const PORT = process.env.PORT || 4000
@@ -12,4 +13,4 @@ app.get('/users',(req,res) => {
 })
 
 
-app.listen(`https://node-test-server-vbvw.onrender.com`)
+app.listen(PORT)
