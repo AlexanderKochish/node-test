@@ -10,19 +10,14 @@ const YAML = require('yaml')
 
 const file  = fs.readFileSync('./swagger.yaml', 'utf8')
 
+app.use(cors())
+app.use(express.json())
 const swaggerDocument = YAML.parse(file)
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.use(cors())
-app.use(express.json())
-
 app.get('/users',(req,res) => {
     return res.json({message: 'Get all Users'})  
 })
-
-
-
-
 
 app.listen(PORT)
