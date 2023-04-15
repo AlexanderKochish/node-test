@@ -8,6 +8,8 @@ const sequelize = require('./db')
 const fs = require("fs")
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yaml')
+const path = require('path');
+const directory = path.resolve(__dirname, 'swagger.yaml')
 
 app.use(cors())
 app.use(express.json())
@@ -15,7 +17,7 @@ var options = {
     explorer: true
 };
 app.use(router)
-const file  = fs.readFileSync('./swagger.yaml')
+const file  = fs.readFileSync(directory)
 const swaggerDocument = YAML.parse(file)
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
