@@ -5,22 +5,22 @@ const app = express()
 const router = require('./routes/router')
 const PORT = process.env.PORT || 3000
 const sequelize = require('./db')
-const fs = require("fs")
-const swaggerUi = require('swagger-ui-express');
-const YAML = require('yaml')
-const path = require('path');
-const directory = path.resolve(__dirname, 'swagger.yaml').toString()
+// const fs = require("fs")
+// const swaggerUi = require('swagger-ui-express');
+// const YAML = require('yaml')
+// const path = require('path');
+// const directory = path.resolve(__dirname, 'swagger.yaml').toString()
 
 app.use(cors())
 app.use(express.json())
-var options = {
-    explorer: true
-};
+// var options = {
+//     explorer: true
+// };
 app.use(router)
-const file  = fs.readFileSync(directory)
-const swaggerDocument = YAML.parse(file)
+// const file  = fs.readFileSync(directory)
+// const swaggerDocument = YAML.parse(file)
 
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
+// app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
 const start = async() => {
     try {
