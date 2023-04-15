@@ -19,9 +19,13 @@ app.use(router)
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const start = async() => {
-    await sequelize.authenticate();
-    await sequelize.sync()
-    app.listen(PORT,()=>console.log(`server run `)) 
+    try {
+        await sequelize.authenticate();
+        await sequelize.sync()
+        app.listen(PORT)  
+    } catch (error) {
+        console.log(error.message)
+    }  
 }
 start()
 
