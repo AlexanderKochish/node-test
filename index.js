@@ -15,7 +15,8 @@ app.use(express.json())
 var options = {
     explorer: true
 };
-const file  = fs.readFileSync('./swagger', 'utf8')
+
+const file  = fs.readFileSync('./swagger.yaml', 'utf8')
 const swaggerDocument = YAML.parse(file)
 
 
