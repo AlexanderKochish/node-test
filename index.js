@@ -5,12 +5,11 @@ const app = express()
 const router = require('./routes/router')
 const PORT = process.env.PORT || 3000
 const sequelize = require('./db')
-
-const swaggerUi = require('swagger-ui-express');
 const fs = require("fs")
+const swaggerUi = require('swagger-ui-express');
 const YAML = require('yaml')
 
-const file  = fs.readFileSync(__dirname,'swagger.yaml', 'utf8')
+const file  = fs.readFileSync('./swagger.yaml', 'utf8')
 
 app.use(cors())
 app.use(express.json())
