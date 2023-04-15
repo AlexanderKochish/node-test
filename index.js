@@ -10,14 +10,14 @@ const swaggerUi = require('swagger-ui-express');
 const fs = require("fs")
 const YAML = require('yaml')
 
-const file  = fs.readFileSync('./swagger.yaml', 'utf8')
+const file  = fs.readFileSync(__dirname,'swagger.yaml', 'utf8')
 
 app.use(cors())
 app.use(express.json())
 const swaggerDocument = YAML.parse(file)
-app.use("/",router)
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/",router)
 const start = async() => {
     try {
         await sequelize.authenticate();
