@@ -9,7 +9,7 @@ const fs = require("fs")
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yaml')
 const path = require('path');
-const directory = path.resolve(__dirname, 'swagger.yaml')
+const directory = path.resolve(__dirname, 'swagger.yaml').toString()
 
 app.use(cors())
 app.use(express.json())
