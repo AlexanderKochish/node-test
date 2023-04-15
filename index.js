@@ -15,7 +15,7 @@ var options = {
     explorer: true
 };
 app.use(router)
-const file  = fs.readFileSync('./swagger.yaml', 'utf8')
+const file  = fs.readFileSync('./swagger.yaml')
 const swaggerDocument = YAML.parse(file)
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
