@@ -15,7 +15,7 @@ const file  = fs.readFileSync('./swagger.yaml', 'utf8')
 app.use(cors())
 app.use(express.json())
 const swaggerDocument = YAML.parse(file)
-app.use(router)
+app.use("/",router)
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const start = async() => {
