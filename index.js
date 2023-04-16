@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express()
 const router = require('./routes/router')
 const sequelize = require('./db')
-const PORT = process.env.DATABASE_URL || 3000
+const PORT = 3000
 
 
 app.use(cors())
