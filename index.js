@@ -2,9 +2,10 @@ const express = require('express')
 require('dotenv').config()
 const cors = require('cors')
 const app = express()
+const sequelize = require('./db')
 const router = require('./routes/router')
 const PORT = 3000
-const sequelize = require('./db')
+
 // swagger
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs')
