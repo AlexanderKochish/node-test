@@ -10,7 +10,6 @@ const sequelize = new Sequlize(
         port: process.env.DB_PORT,
         dialectModule: pg,
         dialect: 'postgres',
-        logging: false
     }
 )
 
