@@ -4,6 +4,7 @@ require('dotenv').config()
 const cors = require('cors')
 const sequelize = require('./db')
 const router = require('./routes/router')
+const xss = require('xss')
 const PORT = process.env.PORT || 3000
 // swagger
 const swaggerUi = require('swagger-ui-express');
@@ -11,6 +12,7 @@ const YAML = require('yamljs')
 const swaggerDocument = YAML.load('./swagger.yaml')
 
 app.use(cors())
+app.use(xss())
 app.use(express.json())
 app.use("/",router)
 
